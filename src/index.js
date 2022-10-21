@@ -1,17 +1,44 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import UserCard from './UserCard';
+import Heading from './Heading';
+import pic1 from './images/mohit.png';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const App = () => {
+  return(
+    <div>
+      <Heading />
+      <br></br>
+    <div className='ui four column grid' >
+      <UserCard 
+      name = 'Mohit Pandey'
+      mutual = '2 Mutual Friends'
+      desc = 'Hello I am Mohit from Lucknow'
+      img = {pic1}/>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+      <UserCard 
+      name = 'Aakash Kumar'
+      mutual = '5 Mutual Friends'
+      desc = 'Hello I am Aakash from Delhi'
+      img = {pic1}/>
+
+      <UserCard 
+      name = 'Ashish Gupta'
+      mutual = 'New Account'
+      desc = 'Hello I am Ashish from Madhya Pradesh'
+      img = {pic1}/>
+
+    <UserCard 
+      name = 'Sumit Mahato'
+      mutual = '0 Mutual Friends'
+      desc = 'Hello I am Sumit from Kolkata'
+      img = {pic1}/>
+    </div>
+    </div>
+  )
+}
+
+ReactDOM.render(
+  <App />,
+  document.querySelector('#root')
+)
